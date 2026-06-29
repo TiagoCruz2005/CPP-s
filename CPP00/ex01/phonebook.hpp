@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:16:23 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/05/14 13:30:13 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/06/29 15:51:03 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ class PhoneBook
     public:
         PhoneBook();
         ~PhoneBook();
+        void    add();
         void    addContact();
         void    searchContacts();
         void    printsearchTable();
         void    printContact(int index);
-        int     search();
-        void     add();
         int     getnumContacts();
+        int     search();
 };
 
-int validatecontactFields(std::string &str);
-int validatephoneNumber(std::string &str);
-int isalldigits(std::string input);
-std::string truncate(std::string str);
+int validatecontactFields(const std::string &str);
+int validatephoneNumber(const std::string &str);
+int isalldigits(const std::string &input);
+std::string truncate(const std::string &str);
 
 #endif

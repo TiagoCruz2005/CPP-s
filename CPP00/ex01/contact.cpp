@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:53:23 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/05/12 12:30:06 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/06/29 15:32:11 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,52 +19,52 @@ Contact::~Contact()
     
 }
 
-void    Contact::setfirstName(std::string firstName)
+void    Contact::setfirstName(const std::string &firstName)
 {
     _firstName = firstName;
 }
 
-void    Contact::setlastName(std::string lastName)
+void    Contact::setlastName(const std::string &lastName)
 {
     _lastName = lastName;
 }
 
-void    Contact::setnickName(std::string nickName)
+void    Contact::setnickName(const std::string &nickName)
 {
     _nickName = nickName;
 }
 
-void    Contact::setphoneNumber(std::string phoneNumber)
+void    Contact::setphoneNumber(const std::string &phoneNumber)
 {
     _phoneNumber = phoneNumber;
 }
 
-void    Contact::setdarkestSecret(std::string darkestSecret)
+void    Contact::setdarkestSecret(const std::string &darkestSecret)
 {
     _darkestSecret = darkestSecret;
 }
 
-std::string    Contact::getfirstName()
+const std::string&    Contact::getfirstName() const
 {
     return _firstName;
 }
 
-std::string     Contact::getlastName()
+const std::string&     Contact::getlastName() const
 {
     return _lastName;
 }
 
-std::string     Contact::getnickName()
+const   std::string&     Contact::getnickName() const
 {
     return _nickName;
 }
 
-std::string     Contact::getphoneNumber()
+const   std::string&     Contact::getphoneNumber() const
 {
     return _phoneNumber;
 }
 
-std::string     Contact::getdarkestSecret()
+const    std::string&     Contact::getdarkestSecret() const
 {
     return _darkestSecret;
 }

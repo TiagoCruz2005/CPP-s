@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:16:29 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/05/14 13:50:37 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/06/29 15:51:11 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int PhoneBook::getnumContacts()
     return num_cont;
 }
 
-std::string truncate(std::string str)
+std::string truncate(const std::string &str)
 {
     if (str.length() > 10)
         return str.substr(0, 9) + ".";
     return str;
 }
 
-int isalldigits(std::string input)
+int isalldigits(const std::string &input)
 {
     int i;
 
@@ -50,7 +50,7 @@ int isalldigits(std::string input)
     return 1;
 }
 
-int validatecontactFields(std::string &str)
+int validatecontactFields(const std::string &str)
 {
     if (str.empty())
         return 0;
@@ -63,7 +63,7 @@ int validatecontactFields(std::string &str)
     return 0;
 }
 
-int validatephoneNumber(std::string &str)
+int validatephoneNumber(const std::string &str)
 {
     if (str.empty())
         return 0;
@@ -157,7 +157,7 @@ void    PhoneBook::printsearchTable()
     std::cout << "+----------+----------+----------+----------+" << std::endl;
     for(int j = 0; j < num_cont; j++)
     {
-        std::cout << "|" << std::setw(10) << j + 1;
+        std::cout << "|" << std::setw(10) << j;
         std::cout << "|" << std::setw(10) << truncate(Contacts[j].getfirstName());
         std::cout << "|" << std::setw(10) << truncate(Contacts[j].getlastName());
         std::cout << "|" << std::setw(10) << truncate(Contacts[j].getnickName()) << "|" << std::endl;
@@ -170,11 +170,11 @@ void    PhoneBook::printsearchTable()
 void    PhoneBook::printContact(int index)
 {
     std::cout << CLEAR << BFGBLUE;
-    std::cout << "First name: " << Contacts[index - 1].getfirstName() << std::endl;
-    std::cout << "Last name: " << Contacts[index - 1].getlastName() << std::endl;
-    std::cout << "Nick name: " << Contacts[index - 1].getdarkestSecret() << std::endl;
-    std::cout << "Phone number: " << Contacts[index - 1].getphoneNumber() << std::endl;
-    std::cout << "Darkest secret: " << Contacts[index - 1].getdarkestSecret() << RESET << std::endl;
+    std::cout << "First name: " << Contacts[index].getfirstName() << std::endl;
+    std::cout << "Last name: " << Contacts[index].getlastName() << std::endl;
+    std::cout << "Nick name: " << Contacts[index].getnickName() << std::endl;
+    std::cout << "Phone number: " << Contacts[index].getphoneNumber() << std::endl;
+    std::cout << "Darkest secret: " << Contacts[index].getdarkestSecret() << RESET << std::endl;
     std::cout << '\n';
 }
 
@@ -216,7 +216,7 @@ void    PhoneBook::searchContacts()
     }
     std::istringstream ss(input);
     ss >> index;
-    while (index < 1 || index > num_cont)
+    while (index < 0 || index >= num_cont || this->Contacts[index].getfirstName() == "")
     {
         std::cout << "---> Error: Invalid index ---> Please write a valid index" << std::endl;
         if (!getline(std::cin, input))
@@ -224,6 +224,7 @@ void    PhoneBook::searchContacts()
         std::istringstream num(input);
         num >> index;
     }
+    
     printContact(index);
     std::cout << "Press any key to continue" << std::endl;
     if (!getline(std::cin, input))

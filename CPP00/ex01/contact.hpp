@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 14:16:34 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/05/07 15:51:38 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/06/29 15:31:19 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ class Contact
     public:
         Contact();
         ~Contact();
-        void    setfirstName(std::string firstName);
-        void    setlastName(std::string lastName);
-        void    setnickName(std::string nickName);
-        void    setphoneNumber(std::string phoneNumber);
-        void    setdarkestSecret(std::string darkestSecret);
-        std::string    getfirstName();
-        std::string    getlastName();
-        std::string    getnickName();
-        std::string    getphoneNumber();
-        std::string    getdarkestSecret();
+        void    setfirstName(const std::string &firstName);
+        void    setlastName(const std::string &lastName);
+        void    setnickName(const std::string &nickName);
+        void    setphoneNumber(const std::string &phoneNumber);
+        void    setdarkestSecret(const std::string &darkestSecret);
+        const std::string&      getfirstName() const;
+        const std::string&      getlastName() const;
+        const std::string&      getnickName() const;
+        const std::string&      getphoneNumber() const;
+        const std::string&      getdarkestSecret() const;
 };
 
 #endif
