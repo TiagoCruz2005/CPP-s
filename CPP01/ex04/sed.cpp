@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/10 17:11:59 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/04/10 23:27:38 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/06/30 17:32:27 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ Sed::Sed(char **argv, std::string name)
     s2 = argv[3];
 
     in.open(argv[1]);
-    out.open(std::string(argv[1]) + ".replace");
+    if (in)
+        out.open(std::string(argv[1]) + ".replace");
 }
 
 Sed::~Sed() {}
