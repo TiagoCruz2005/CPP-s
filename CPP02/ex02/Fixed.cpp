@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 01:48:03 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/06/19 03:01:19 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/01 14:47:29 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@ Fixed::Fixed()
 Fixed::Fixed(const int num)
 {
     std::cout << "Int constructor called" << std::endl;
+    if (num > (INT_MAX >> _fracbits) || num < (INT_MIN >> _fracbits))
+        std::cerr << "Warning: value out of range" << std::endl;
     _num = num * (1 << _fracbits);
 }
 
 Fixed::Fixed(const float num)
 {
     std::cout << "Float constructor called" << std::endl;
+    if (num > (INT_MAX >> _fracbits) || num < (INT_MIN >> _fracbits))
+        std::cerr << "Warning: value out of range" << std::endl;
     _num = roundf(num * (1 << _fracbits));
 }
 
