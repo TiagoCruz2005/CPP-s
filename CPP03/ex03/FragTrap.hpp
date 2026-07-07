@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/02 16:27:57 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/06 13:51:26 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/06 21:15:44 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/06 21:21:23 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ScavTrap.hpp"
 
-int main()
+# ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
+# include "ClapTrap.hpp"
+# include <iostream>
+
+class   FragTrap : virtual  public ClapTrap
 {
-    ClapTrap    bob("Bob");
-    ScavTrap    boby("Boby");
+    public:
+        FragTrap();
+        FragTrap(const std::string& name);
+        FragTrap(const FragTrap& other);
+        FragTrap    &operator=(const FragTrap& other);
+        ~FragTrap();
+        void    hightFivesGuys(void);
+};
 
-    bob.atack("Boby");
-    boby.takeDamage(100);
-    boby.atack("Bob");
-    bob.takeDamage(boby.getAttackDamage());
-    boby.guardGate();
-    bob.beRepaired(10);
-}
+# endif

@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 19:04:21 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/06/26 19:50:38 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/06 13:58:42 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(const std::string& name)
 {
-    std::cout << "Parameterized constructor called" << std::endl;
+    std::cout << "Constructor called" << std::endl;
     _name = name;
     _hitpoints = 10;
     _energypoints = 10;
@@ -55,9 +55,11 @@ ClapTrap::~ClapTrap()
 
 void    ClapTrap::atack(const std::string& target)
 {
+    if (_hitpoints == 0)
+        std::cout << "ClapTrap " << _name << " is already dead!" << std::endl;
     if (_energypoints != 0)
     {
-        std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _atackdamage << " points of damage!" << std::endl;
+        std::cout << "ClapTrap " << _name << " attacks " << target << std::endl;
         _energypoints--;
     }
     else
@@ -66,6 +68,11 @@ void    ClapTrap::atack(const std::string& target)
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
+    if (((int)_hitpoints - (int)amount) < 0)
+    {
+        std::cout << "ClapTrap " << _name << " took " << amount << " points of damage!" << std::endl;
+        _hitpoints = 0;
+    }
     if (_hitpoints != 0)
     {
         std::cout << "ClapTrap " << _name << " took " << amount << " points of damage!" << std::endl;

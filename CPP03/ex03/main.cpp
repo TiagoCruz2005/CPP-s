@@ -5,22 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/02 16:27:57 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/06 13:51:26 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/06 22:15:44 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/07 12:07:40 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ScavTrap.hpp"
+# include "DiamondTrap.hpp"
 
 int main()
 {
-    ClapTrap    bob("Bob");
-    ScavTrap    boby("Boby");
+    DiamondTrap dima("Dima");
 
-    bob.atack("Boby");
-    boby.takeDamage(100);
-    boby.atack("Bob");
-    bob.takeDamage(boby.getAttackDamage());
-    boby.guardGate();
-    bob.beRepaired(10);
+    dima.whoAmI();
+    dima.guardGate();
+    dima.hightFivesGuys();
+    
 }

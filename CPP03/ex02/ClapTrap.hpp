@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 20:07:06 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/03 16:46:15 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/06 14:06:36 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/06 17:02:29 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class ClapTrap
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
         unsigned int    getAttackDamage() const;
+        std::string&    getName();
 };
 
 # endif

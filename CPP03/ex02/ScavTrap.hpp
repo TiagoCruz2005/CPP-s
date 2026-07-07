@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/02 16:27:57 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/06 13:51:26 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/06 14:06:04 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/06 14:06:06 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ScavTrap.hpp"
+# ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main()
+# include "ClapTrap.hpp"
+# include <iostream>
+
+class ScavTrap: public  ClapTrap
 {
-    ClapTrap    bob("Bob");
-    ScavTrap    boby("Boby");
+    public:
+        ScavTrap();
+        ScavTrap(const std::string& name);
+        ScavTrap(const ScavTrap &other);
+        ScavTrap    &operator=(const ScavTrap &other);
+        ~ScavTrap();
+        void    guardGate();
+};
 
-    bob.atack("Boby");
-    boby.takeDamage(100);
-    boby.atack("Bob");
-    bob.takeDamage(boby.getAttackDamage());
-    boby.guardGate();
-    bob.beRepaired(10);
-}
+# endif

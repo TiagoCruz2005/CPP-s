@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/26 19:42:26 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/03 16:53:51 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/06 21:16:03 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/06 21:16:05 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {}
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) 
+{
+    std::cout << "ScavTrap copy constructor called" << std::endl;
+}
 
 void    ScavTrap::guardGate()
 {
