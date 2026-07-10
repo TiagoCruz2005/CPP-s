@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 21:14:59 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/06 21:15:05 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/10 15:26:25 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ unsigned int    ClapTrap::getAttackDamage() const
     return _atackdamage;
 }
 
-std::string&    ClapTrap::getName()
+std::string    ClapTrap::getName() const
 {
     return _name;
 }
