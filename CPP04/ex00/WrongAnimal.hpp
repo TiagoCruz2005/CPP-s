@@ -6,14 +6,14 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 15:09:33 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/08 15:29:32 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:26:35 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
-# include <iostream>
+# include <string>
 # include "colors.hpp"
 
 class WrongAnimal

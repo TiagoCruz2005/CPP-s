@@ -6,10 +6,11 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 14:14:26 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/08 15:36:43 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:25:57 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <iostream>
 # include "Cat.hpp"
 
 Cat::Cat() : Animal()

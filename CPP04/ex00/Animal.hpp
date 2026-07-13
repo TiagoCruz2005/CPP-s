@@ -6,14 +6,14 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 23:22:35 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/08 17:59:58 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:30:25 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
-# include <iostream>
+# include <string>
 # include "colors.hpp"
 
 class Animal
@@ -24,7 +24,7 @@ class Animal
         Animal();
         Animal(const Animal& other);
         Animal& operator=(const Animal& other);
-        ~Animal();
+        virtual ~Animal();
         virtual void    makeSound() const;
         std::string    getType() const;
 };

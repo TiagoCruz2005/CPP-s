@@ -6,10 +6,11 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 23:58:27 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/08 15:01:32 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:26:14 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <iostream>
 # include "Dog.hpp"
 
 Dog::Dog() : Animal()

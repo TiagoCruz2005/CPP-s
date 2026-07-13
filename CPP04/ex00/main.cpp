@@ -6,10 +6,11 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 15:25:27 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/08 16:37:44 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:27:20 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <iostream>
 # include "Cat.hpp"
 # include "Dog.hpp"
 # include "WrongCat.hpp"

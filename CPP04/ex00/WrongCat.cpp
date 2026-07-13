@@ -6,10 +6,11 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 15:20:57 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/08 15:44:43 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:26:55 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <iostream>
 # include "WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal()

@@ -6,14 +6,14 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:46:37 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/09 18:01:20 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:34:44 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef BRAIN_HPP
 # define BRAIN_HPP
 
-# include <iostream>
+# include <string>
 
 class Brain
 {

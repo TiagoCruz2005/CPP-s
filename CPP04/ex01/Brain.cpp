@@ -6,10 +6,11 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:49:54 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/09 18:04:32 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:28:03 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <iostream>
 # include "Brain.hpp"
 
 Brain::Brain()

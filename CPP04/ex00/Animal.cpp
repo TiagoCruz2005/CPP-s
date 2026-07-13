@@ -6,10 +6,11 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 23:27:56 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/08 15:35:52 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/13 17:25:39 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <iostream>
 # include "Animal.hpp"
 
 Animal::Animal()
