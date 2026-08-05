@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 16:44:51 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/16 15:10:36 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/14 18:13:56 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/15 16:02:58 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+# ifndef CURE_HPP
+# define CURE_HPP
 
 # include <string>
-# include "colors.hpp"
+# include "AMateria.hpp"
 
-class Animal
+class Cure : public AMateria
 {
-    protected:
-        std::string _type;
     public:
-        Animal();
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& other);
-        virtual ~Animal();
-        virtual void    makeSound() const = 0;
+        Cure();
+        Cure(const Cure& other);
+        Cure    &operator=(const Cure& other);
+        ~Cure();
+
+        AMateria* clone() const;
+        void    use(ICharacter& other);
 };
 
 # endif

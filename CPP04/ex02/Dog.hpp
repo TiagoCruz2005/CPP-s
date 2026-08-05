@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:46:13 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/09 17:59:45 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/16 15:12:45 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Dog : public Animal
 
         void    setIdea(int index, const std::string& idea);
         std::string getIdea(int index) const;
+        std::string getType() const;
 };
 
 # endif

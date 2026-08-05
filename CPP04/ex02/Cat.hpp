@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:45:32 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/09 18:06:51 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/16 15:11:06 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Cat : public Animal
 
         void    setIdea(int index, const std::string& idea);
         std::string getIdea(int index) const;
+        std::string getType() const;
 };
 
 # endif

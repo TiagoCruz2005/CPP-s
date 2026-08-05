@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 16:44:51 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/16 15:10:36 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/08 15:02:52 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/08 15:15:10 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+# ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-# include <string>
-# include "colors.hpp"
+# include "WrongAnimal.hpp"
 
-class Animal
+class WrongCat : public WrongAnimal
 {
-    protected:
-        std::string _type;
     public:
-        Animal();
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& other);
-        virtual ~Animal();
-        virtual void    makeSound() const = 0;
+        WrongCat();
+        WrongCat(const WrongCat& other);
+        WrongCat    operator=(const WrongCat& other);
+        ~WrongCat();
+        void    makeSound() const;
 };
 
 # endif

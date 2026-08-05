@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 16:44:51 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/16 15:10:36 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/15 16:04:57 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/15 16:08:48 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+# ifndef ICE_HPP
+# define ICE_HPP
 
 # include <string>
-# include "colors.hpp"
+# include "AMateria.hpp"
 
-class Animal
+class Ice : public AMateria
 {
-    protected:
-        std::string _type;
     public:
-        Animal();
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& other);
-        virtual ~Animal();
-        virtual void    makeSound() const = 0;
+        Ice();
+        Ice(const Ice& other);
+        Ice &operator=(const Ice& other);
+        ~Ice();
+
+        AMateria* clone() const;
+        void    use(ICharacter& target);
 };
 
 # endif

@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:45:16 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/13 17:28:14 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/05 15:35:43 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ Cat&    Cat::operator=(const Cat& other)
     if (this != &other)
     {
         Animal::operator=(other);
-        *_brain = *other._brain;
+        delete _brain;
+        _brain = new Brain(*other._brain);
     }
     return *this;
 }

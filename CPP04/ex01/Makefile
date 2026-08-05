@@ -2,7 +2,7 @@ CXX = c++
 
 FLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

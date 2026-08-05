@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:44:25 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/13 17:34:33 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/07/16 15:10:46 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,4 @@ Animal&  Animal::operator=(const Animal& other)
 Animal::~Animal()
 {
     std::cout << "Animal destructor called" << std::endl;
-}
-
-std::string    Animal::getType() const
-{
-    return _type;
 }

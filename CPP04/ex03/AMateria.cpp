@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/08 16:44:51 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/16 15:10:36 by tide-pau         ###   ########.fr       */
+/*   Created: 2026/07/16 14:59:06 by tide-pau          #+#    #+#             */
+/*   Updated: 2026/07/16 15:04:01 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+# include <iostream>
+# include "AMateria.hpp"
 
-# include <string>
-# include "colors.hpp"
-
-class Animal
+AMateria::AMateria()
 {
-    protected:
-        std::string _type;
-    public:
-        Animal();
-        Animal(const Animal& other);
-        Animal& operator=(const Animal& other);
-        virtual ~Animal();
-        virtual void    makeSound() const = 0;
-};
+    _type = "none";
+    std::cout << "AMateria default constructor called" << std::endl;
+}
 
-# endif
+AMateria::AMateria(std::string const & type)
+{
+    _type = type;
+    std::cout << "AMateria constructor called" << std::endl;
+}
+
+
