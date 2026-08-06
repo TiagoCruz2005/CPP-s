@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:45:16 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/08/05 15:38:58 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:45:37 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ Cat::Cat() : Animal()
 
 Cat::Cat(const Cat& other) : Animal(other)
 {
-    std::cout << "Cat copy constructor called" << std::endl;
+    std::cout << BFGGREEN << BOLD << "Cat copy constructor called" << RESET << std::endl;
     _brain = new Brain(*other._brain);
 }
 
 Cat&    Cat::operator=(const Cat& other)
 {
-    std::cout << "Cat copy assigment operator called" << std::endl;
+    std::cout << BFGGREEN << BOLD << "Cat copy assigment operator called" << RESET << std::endl;
     if (this != &other)
     {
         Animal::operator=(other);
@@ -46,7 +46,7 @@ Cat::~Cat()
 
 void    Cat::makeSound() const
 {
-    std::cout << BFGCYAN << BOLD << _type << RESET << ": MEOW!" << std::endl;
+    std::cout << BFGGREEN << BOLD << _type << RESET << ": MEOW!" << std::endl;
 }
 
 void    Cat::setIdea(int index, const std::string& idea)

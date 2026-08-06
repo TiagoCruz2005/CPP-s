@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:45:16 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/08/05 15:35:43 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:38:52 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat() : Animal()
 
 Cat::Cat(const Cat& other) : Animal(other)
 {
-    std::cout << "Cat copy constructor called" << std::endl;
+    std::cout << BFGGREEN << BOLD << "Cat copy constructor called" << RESET << std::endl;
     _brain = new Brain(*other._brain);
 }
 

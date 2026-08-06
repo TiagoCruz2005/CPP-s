@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:49:54 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/13 17:34:54 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:44:53 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 
 Brain::Brain()
 {
-    std::cout << "Brain Default constructor called" << std::endl;
+    std::cout << BFGMAGEN << BOLD << "Brain Default constructor called" << RESET << std::endl;
 }
 
 Brain::Brain(const Brain& other)
 {
     for (int i = 0; i < 100; i++)
         _ideas[i] = other._ideas[i];
-    std::cout << "Brain copy constructor called" << std::endl;
+    std::cout << BFGMAGEN << BOLD << "Brain copy constructor called" << RESET << std::endl;
 }
 
 Brain&   Brain::operator=(const Brain& other)
 {
-    std::cout << "Brain copy assigment operator called" << std::endl;
+    std::cout << BFGMAGEN << BOLD << "Brain copy assigment operator called" << RESET << std::endl;
     if (this != &other)
     {
         for (int i = 0; i < 100; i++)
@@ -38,7 +38,7 @@ Brain&   Brain::operator=(const Brain& other)
 
 Brain::~Brain()
 {
-    std::cout << "Brain destructor called" << std::endl;
+    std::cout << BFGMAGEN << BOLD << "Brain destructor called" << RESET << std::endl;
 }
 
 void    Brain::setIdea(int index, const std::string& idea)
