@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:44:25 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/13 17:27:42 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:38:28 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ Animal::Animal()
 
 Animal::Animal(const Animal& other)
 {
-    std::cout << "Animal copy constructor called" << std::endl;
+    std::cout << BFGYELLOW << BOLD << "Animal copy constructor called" << RESET << std::endl;
     *this = other;
 }
 
 Animal&  Animal::operator=(const Animal& other)
 {
-    std::cout << "Animal copy assigment operator called" << std::endl;
+    std::cout << BFGYELLOW << BOLD << "Animal copy assigment operator called" << RESET << std::endl;
     if (this != &other)
         _type = other._type;
     return *this;
@@ -35,12 +35,12 @@ Animal&  Animal::operator=(const Animal& other)
 
 Animal::~Animal()
 {
-    std::cout << "Animal destructor called" << std::endl;
+    std::cout << BFGYELLOW << BOLD << "Animal destructor called" << RESET << std::endl;
 }
 
 void    Animal::makeSound() const
 {
-    std::cout << "Animal does some generic sound" << std::endl;
+    std::cout << BFGYELLOW << BOLD << "Animal does some generic sound" << RESET << std::endl;
 }
 
 std::string    Animal::getType() const

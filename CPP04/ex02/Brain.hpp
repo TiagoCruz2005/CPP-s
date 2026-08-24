@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:46:37 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/13 17:34:44 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:44:15 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BRAIN_HPP
 
 # include <string>
+# include "colors.hpp"
 
 class Brain
 {

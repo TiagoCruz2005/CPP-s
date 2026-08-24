@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:45:50 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/08/05 15:36:33 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:41:06 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 Dog::Dog() : Animal()
 {
-    std::cout << BFGMAGEN << BOLD << "Dog Default constructor called" << RESET << std::endl;
+    std::cout << BFGCYAN << BOLD << "Dog Default constructor called" << RESET << std::endl;
     _brain = new Brain();
     _type = "Dog";
 }
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
-    std::cout << "Dog copy constructor called" << std::endl;
+    std::cout << BFGCYAN << BOLD << "Dog copy constructor called" << RESET << std::endl;
     _brain = new Brain(*other._brain);
 }
 
@@ -40,7 +40,7 @@ Dog&    Dog::operator=(const Dog& other)
 
 Dog::~Dog()
 {
-    std::cout << "Dog destructor called" << std::endl;
+    std::cout << BFGCYAN << BOLD "Dog destructor called" << RESET << std::endl;
     delete _brain;
 }
 

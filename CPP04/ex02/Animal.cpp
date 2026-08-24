@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 16:44:25 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/07/16 15:10:46 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/06 16:44:03 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ Animal::Animal()
 
 Animal::Animal(const Animal& other)
 {
-    std::cout << "Animal copy constructor called" << std::endl;
+    std::cout << BFGYELLOW << BOLD << "Animal copy constructor called" << RESET << std::endl;
     *this = other;
 }
 
 Animal&  Animal::operator=(const Animal& other)
 {
-    std::cout << "Animal copy assigment operator called" << std::endl;
+    std::cout << BFGYELLOW << BOLD << "Animal copy assigment operator called" << RESET << std::endl;
     if (this != &other)
         _type = other._type;
     return *this;
@@ -35,5 +35,5 @@ Animal&  Animal::operator=(const Animal& other)
 
 Animal::~Animal()
 {
-    std::cout << "Animal destructor called" << std::endl;
+    std::cout << BFGYELLOW << BOLD << "Animal destructor called" << RESET << std::endl;
 }
