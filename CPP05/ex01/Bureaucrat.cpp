@@ -6,10 +6,11 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 16:39:09 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/08/24 19:28:42 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/26 16:23:55 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "colors.hpp"
 # include "Bureaucrat.hpp"
 # include "Form.hpp"
 # include <iostream>
@@ -23,11 +24,11 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 }
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {
-    std::cout << "Bureaucrat Default constructor called" << std::endl;
+    std::cout << UNDERLINE "Bureaucrat Default constructor called" RESET<< std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade) {
-    std::cout << "Bureaucrat Constructor called" << std::endl;
+    std::cout << UNDERLINE "Bureaucrat Constructor called" RESET << std::endl;
     if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
     else if (grade < 1)
@@ -35,12 +36,12 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) {
-    std::cout << "Bureaucrat Copy constructor called" << std::endl;
+    std::cout << UNDERLINE "Bureaucrat Copy constructor called" RESET << std::endl;
     *this = other;
 }
 
 Bureaucrat  &Bureaucrat::operator=(const Bureaucrat& other) {
-    std::cout << "Bureaucrat Copy assigment operator called" << std::endl;
+    std::cout << UNDERLINE "Bureaucrat Copy assigment operator called" RESET << std::endl;
     if (this != &other)
     {
         _name = other._name;
@@ -70,25 +71,25 @@ void    Bureaucrat::decrement() {
 }
 
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {
-    out << bureaucrat.getName();
-    out << ", bureaucrat grade ";
-    out << bureaucrat.getGrade();
+    out << BOLD BFGCYAN << bureaucrat.getName() << RESET;
+    out << BOLD BFGMAGEN ", bureaucrat grade " RESET;
+    out << BOLD BFGYELLOW << bureaucrat.getGrade() << RESET;
     return out;
 }
 
 Bureaucrat::~Bureaucrat() {
-    std::cout << "Bureaucrat Destructor called" << std::endl;
+    std::cout << UNDERLINE "Bureaucrat Destructor called" RESET << std::endl;
 }
 
 void    Bureaucrat::signForm(Form& form) {
     try
     {
         form.beSigned(*this);
-        std::cout << _name << " signed " << form.getName();
+        std::cout << BOLD BFGGREEN << _name << " signed " << form.getName() << RESET << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << _name << " couldn't sign "
-        << form.getName() << " because " << e.what() << std::endl;
+        std::cerr << BOLD BFGRED << _name << " couldn't sign "
+        << form.getName() << " because " RESET << e.what() << std::endl;
     }
 }

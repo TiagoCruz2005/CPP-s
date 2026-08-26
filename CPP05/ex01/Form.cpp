@@ -6,29 +6,30 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 17:18:35 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/08/24 19:16:40 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/08/26 16:27:57 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Form.hpp"
 # include "Bureaucrat.hpp"
 # include <iostream>
+# include "colors.hpp"
 
 const   char* Form::GradeTooHighException::what() const throw() {
-    return "Grade requirement to high!";
+    return BOLD BFGRED "Grade requirement is to high!" RESET;
 }
 
 const char* Form::GradeTooLowException::what() const throw() {
-    return "Grade requirement to low!";    
+    return BOLD BFGRED "Grade requirement is to low!" RESET;    
 }
 
 Form::Form() : _name("Default"), _isSigned(false), _signGrade(150), _exeGrade(150) {
-    std::cout << "Form Default constructor called" << std::endl;
+    std::cout << UNDERLINE "Form Default constructor called" RESET << std::endl;
 }
 
 Form::Form(const std::string& name, int signGrade, int exeGrade)
     : _name(name), _isSigned(false), _signGrade(signGrade), _exeGrade(exeGrade) {
-    std::cout << "Form Constructor called" << std::endl;
+    std::cout << UNDERLINE "Form Constructor called" RESET << std::endl;
     
     if (_signGrade > 150)
         throw Form::GradeTooLowException();
@@ -44,7 +45,7 @@ Form::Form(const std::string& name, int signGrade, int exeGrade)
 Form::Form(const Form& other) 
     : _name(other._name), _isSigned(other._isSigned),
     _signGrade(other._signGrade), _exeGrade(other._exeGrade) {
-    std::cout << "Form copy constructor called" << std::endl;
+    std::cout << UNDERLINE "Form copy constructor called" RESET << std::endl;
 }
 
 Form    &Form::operator=(const Form& other) {
@@ -54,7 +55,7 @@ Form    &Form::operator=(const Form& other) {
 }
 
 Form::~Form() {
-    std::cout << "Form destructor called" << std::endl;
+    std::cout << UNDERLINE "Form destructor called" RESET << std::endl;
 }
 
 int Form::getSignGrade() const {
@@ -76,9 +77,15 @@ void    Form::beSigned(const Bureaucrat& bureau) {
         throw Form::GradeTooLowException();
 }
 
+const std::string&  Form::getName() const {
+    return _name;
+}
+
 std::ostream& operator<<(std::ostream& out, const Form& form) {
-    out << "Name: " << form.getName() << std::endl;
-    out << "Signed: " << (form.getIsSigned() ? "yes" : "no") << std::endl;
-    out << "Grade required to sign: " << form.getSignGrade() << std::endl;
-    out << "Grade required to execute: " << form.getExeGrade() << std::endl;
+    out << BOLD BFGCYAN "Name: " << form.getName() << RESET << std::endl;
+    out << BOLD BFGYELLOW "Signed: " RESET << (form.getIsSigned() ? BOLD BFGGREEN "yes" RESET : BOLD BFGRED "no" RESET) << std::endl;
+    out << BOLD BFGMAGEN "Grade required to sign: " RESET BOLD BFGYELLOW << form.getSignGrade() << RESET << std::endl;
+    out << BOLD BFGMAGEN "Grade required to execute: " RESET BOLD BFGYELLOW << form.getExeGrade() << RESET << std::endl;
+
+    return out;
 }
