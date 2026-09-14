@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 17:18:35 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/08/26 16:27:57 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/09/08 14:37:35 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ Form::Form(const Form& other)
 }
 
 Form    &Form::operator=(const Form& other) {
+    std::cout << UNDERLINE "Form copy assigment operator called" RESET << std::endl;
     if (this != &other)
         _isSigned = other._isSigned;
     return *this;
