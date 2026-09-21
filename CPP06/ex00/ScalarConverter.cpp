@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 13:34:32 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/09/21 15:00:10 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/09/21 15:10:05 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,10 +164,9 @@ void     ScalarConverter::printIfInt(int val) {
 }
 
 void    ScalarConverter::printIfFloat(float val) {
-    int i = static_cast<int>(val);
-    if (i <= MAXCHAR && i >= MINCHAR)
+    if (val <= MAXCHAR && val >= MINCHAR)
     {
-        if (isprint(static_cast<unsigned char>(i)))
+        if (isprint(static_cast<unsigned char>(val)))
             std::cout << "char: " << static_cast<char>(val) << std::endl;
         else if (!isprint(static_cast<char>(val)))
             std::cout << "char: Non displayable" << std::endl;
@@ -188,10 +187,9 @@ void    ScalarConverter::printIfFloat(float val) {
 }
 
 void    ScalarConverter::printIfDouble(double val) {
-    int i = static_cast<int>(val);
-    if (i <= MAXCHAR && i >= MINCHAR)
+    if (val <= MAXCHAR && val >= MINCHAR)
     {
-        if (isprint(static_cast<unsigned char>(i)))
+        if (isprint(static_cast<unsigned char>(val)))
             std::cout << "char: " << static_cast<char>(val) << std::endl;
         else if (!isprint(static_cast<char>(val)))
             std::cout << "char: Non displayable" << std::endl;
