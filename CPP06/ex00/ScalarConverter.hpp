@@ -6,7 +6,7 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 12:57:37 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/09/21 13:56:53 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/09/22 16:08:34 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ class ScalarConverter
         ScalarConverter&  operator=(const ScalarConverter& other);
         ~ScalarConverter();
 
-    public:
-
         static  bool    isLiteral(std::string&  str);
         static  bool    isValidChar(std::string& str);
         static  bool    isValidNumber(std::string& str);
@@ -52,8 +50,8 @@ class ScalarConverter
         static  int     checkForType(std::string&   str);
         static  void    verifyLiterals(std::string& str);
         static  void    numberConvertions(std::string& str, int ret);
-        static  void    printLiterals(std::string  f, std::string d);
-        
+        static  void    printLiterals(std::string  f, std::string d);        
+    public:
         static  void    convert(std::string& literal);
 };
 

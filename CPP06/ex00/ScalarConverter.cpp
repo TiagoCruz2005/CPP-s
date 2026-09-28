@@ -6,12 +6,14 @@
 /*   By: tide-pau <tide-pau@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 13:34:32 by tide-pau          #+#    #+#             */
-/*   Updated: 2026/09/21 15:10:05 by tide-pau         ###   ########.fr       */
+/*   Updated: 2026/09/22 17:53:05 by tide-pau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include <iostream>
 # include <cstdlib>
+# include <iomanip>
+# include "colors.hpp"
 # include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter() {}
@@ -159,8 +161,10 @@ void     ScalarConverter::printIfInt(int val) {
     else
         std::cout << "char: impossible" << std::endl;
     std::cout << "int: " << val << std::endl;
-    std::cout << "float: " << static_cast<float>(val) << ".0f" << std::endl;
-    std::cout << "double: " << static_cast<double>(val) << ".0" << std::endl;
+    std::cout << std::fixed << std::setprecision(1);
+    std::cout << "float: " << static_cast<float>(val) << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(val) << std::endl;
+    std::cout.unsetf(std::ios::floatfield);
 }
 
 void    ScalarConverter::printIfFloat(float val) {
@@ -173,21 +177,18 @@ void    ScalarConverter::printIfFloat(float val) {
     }
     else
         std::cout << "char: impossible" << std::endl;
-    std::cout << "int: " << static_cast<int>(val) << std::endl;
-    if (val == static_cast<int>(val))
-    {
-        std::cout << "float: " << val << ".0f" << std::endl;
-        std::cout << "double: " << static_cast<double>(val) << ".0" << std::endl;
-    }
+    if (val >= 2147483648 || val < MININT)
+        std::cout << "int: Impossible" << std::endl;
     else
-    {
-        std::cout << "float: " << val << "f" << std::endl;
-        std::cout << "double: " << static_cast<double>(val) << std::endl;
-    }
+        std::cout << "int: " << static_cast<int>(val) << std::endl;
+    std::cout << std::fixed << std::setprecision(1);
+    std::cout << "float: " << val << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(val) << std::endl;
+    std::cout.unsetf(std::ios::floatfield);
 }
 
 void    ScalarConverter::printIfDouble(double val) {
-    if (val <= MAXCHAR && val >= MINCHAR)
+    if (static_cast<int>(val) <= MAXCHAR && static_cast<int>(val) >= MINCHAR)
     {
         if (isprint(static_cast<unsigned char>(val)))
             std::cout << "char: " << static_cast<char>(val) << std::endl;
@@ -196,36 +197,37 @@ void    ScalarConverter::printIfDouble(double val) {
     }
     else
         std::cout << "char: impossible" << std::endl;
-    std::cout << "int: " << static_cast<int>(val) << std::endl;
-    if (val == static_cast<int>(val))
-    {
-        std::cout << "float: " << static_cast<float>(val) << ".0f" << std::endl;
-        std::cout << "double: " << val << ".0" << std::endl;
-    }
+    if (val > MAXINT || val < MININT)
+        std::cout << "int: Impossible" << std::endl;
     else
-    {
-        std::cout << "float: " << static_cast<float>(val) << "f" << std::endl;
-        std::cout << "double: " << val << std::endl;
-    }
+        std::cout << "int: " << static_cast<int>(val) << std::endl;
+    std::cout << std::fixed << std::setprecision(1);
+    std::cout << "float: " << static_cast<float>(val) << "f" << std::endl;
+    std::cout << "double: " << val << std::endl;
+    std::cout.unsetf(std::ios::floatfield);
 }
 
 void    ScalarConverter::numberConvertions(std::string& str, int ret) {
     char* end;
     double  val = strtod(str.c_str(), &end);
-    
+
     switch (ret)
     {
         case (0):
             std::cout << "char: impossible" << std::endl;
             std::cout << "int: impossible" << std::endl;
+            std::cout << std::fixed << std::setprecision(1);
             std::cout << "float: " << static_cast<float>(val) << "f" << std::endl;
             std::cout << "double: " << val << std::endl;
+            std::cout.unsetf(std::ios::floatfield);
             break;
         case (1):
             std::cout << "char: impossible" << std::endl;
             std::cout << "int: impossible" << std::endl;
+            std::cout << std::fixed << std::setprecision(1);
             std::cout << "float: " << static_cast<float>(val) << "f" << std::endl;
             std::cout << "double: " << static_cast<double>(val) << std::endl;
+            std::cout.unsetf(std::ios::floatfield);
             break;
         case (2):
             switch(checkOriginalType(str))
@@ -237,7 +239,7 @@ void    ScalarConverter::numberConvertions(std::string& str, int ret) {
                     printIfFloat(static_cast<float>(val));
                     break;
                 case (DOUBLE):
-                    printIfDouble(static_cast<double>(val));
+                    printIfDouble(val);
             }
         break;
     }
